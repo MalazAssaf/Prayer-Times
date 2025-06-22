@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pray Time</title>
+    <link rel="stylesheet" href="master.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- The main container -->
+    <div class="container">
+      <h1 class="title mt-5 text-center fw-bold">Daily Prayer Times</h1>
+      <!-- The inputs box -->
+      <div class="info p-3 my-5">
+        <div
+          class="d-flex flex-column flex-sm-row gap-4 align-items-center justify-content-between"
+        >
+          <div class="dropdown cities-list">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            ></button>
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              data-bs-theme="dark"
+            >
+              <li><a class="dropdown-item" href="#">Riyadh</a></li>
+              <li><a class="dropdown-item" href="#">Makkah</a></li>
+              <li><a class="dropdown-item" href="#">Jeddah</a></li>
+              <li><a class="dropdown-item" href="#">Medina</a></li>
+              <li><a class="dropdown-item" href="#">Dammam</a></li>
+
+              <li><a class="dropdown-item" href="#">Damascus</a></li>
+              <li><a class="dropdown-item" href="#">Homs</a></li>
+              <li><a class="dropdown-item" href="#">Aleppo</a></li>
+              <li><a class="dropdown-item" href="#">Latakia</a></li>
+              <li><a class="dropdown-item" href="#">Tartus</a></li>
+
+              <li><a class="dropdown-item" href="#">Muscat</a></li>
+              <li><a class="dropdown-item" href="#">Salalah</a></li>
+
+              <li><a class="dropdown-item" href="#">Munich</a></li>
+              <li><a class="dropdown-item" href="#">Berlin</a></li>
+              <li><a class="dropdown-item" href="#">Frankfurt</a></li>
+              <li><a class="dropdown-item" href="#">Recklinghausen</a></li>
+              <li><a class="dropdown-item" href="#">Landau an der Isar</a></li>
+
+              <li><a class="dropdown-item" href="#">Istanbul</a></li>
+              <li><a class="dropdown-item" href="#">London</a></li>
+              <li><a class="dropdown-item" href="#">New York</a></li>
+              <li><a class="dropdown-item" href="#">Toronto</a></li>
+            </ul>
+          </div>
+
+          <div class="date">
+            <input type="date" id="myDate" name="myDate" />
+          </div>
+        </div>
+
+        <div
+          class="d-flex justify-content-center align-items-center my-3 my-sm-0"
+        >
+          <button class="btn btn-primary fs-5" id="submit">Submit</button>
+        </div>
+      </div>
+      <!-- A loader -->
+      <div id="loadingSpinner" class="text-center d-none">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <!-- The prays time box -->
+      <div class="boxCard p-3 mb-3 d-flex flex-column text-center">
+        <div
+          class="pray-info p-2 d-flex flex-column flex-sm-row align-items-center justify-content-between"
+        >
+          <h3 class="fw-bold">
+            <span class="selected-city"></span>
+          </h3>
+          <span class="selected-date"></span>
+        </div>
+        <div id="prays" class="text-capitalize p-5">
+          <ul
+            class="list-unstyled d-flex flex-column flex-sm-row justify-content-between gap-3 mb-0"
+          >
+            <li class="pray-time pray-card">
+              <h5>Fajr</h5>
+              🌃
+              <p></p>
+            </li>
+            <li class="pray-time pray-card">
+              <h5>sunrise</h5>
+              🌅
+              <p></p>
+            </li>
+            <li class="pray-time pray-card">
+              <h5>dhuhr</h5>
+              ☀️
+              <p></p>
+            </li>
+            <li class="pray-time pray-card">
+              <h5>asr</h5>
+              🌇
+              <p></p>
+            </li>
+            <li class="pray-time pray-card">
+              <h5>maghrib</h5>
+              🌆
+              <p></p>
+            </li>
+            <li class="pray-time pray-card">
+              <h5>isha</h5>
+              🌌
+              <p></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="master.js"></script>
+</html>
